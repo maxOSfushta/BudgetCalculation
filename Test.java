@@ -19,18 +19,18 @@ public class Test {
         Lecturer lecturersInBio6 = new Lecturer("Brooke", "Farrington", "Lecturer", "Biology", 7);
         Lecturer lecturersInBio7 = new Lecturer("Adam", "Henson", "Lecturer", "Biology", 9);
 
-        Student studentsInBio1 = new Student("Sam", "Robinson", 2, "Biology", 1, true, true);
-        Student studentsInBio2 = new Student("Hendrix", "Graves", 1, "Biology", 2, false, true);
-        Student studentsInBio3 = new Student("Conrad", "Mercado", 4, "Biology", 2, true, false);
-        Student studentsInBio4 = new Student("Jensen", "Hurst", 4, "Biology", 3, false, false);
-        Student studentsInBio5 = new Student("Jamie", "Mcclure", 3, "Biology", 4, true, true);
-        Student studentsInBio6 = new Student("Torin", "Stewart", 2, "Biology", 2, true, false);
-        Student studentsInBio7 = new Student("Teodor", "Lindsay", 3, "Biology", 4, false, false);
-        Student studentsInBio8 = new Student("Emilia", "Dotson", 1, "Biology", 1, false, true);
-        Student studentsInBio9 = new Student("Miller", "Bourne", 2, "Biology", 3, true, false);
-        Student studentsInBio10 = new Student("Che", "Coulson", 3, "Biology", 1, false, false);
-        Student studentsInBio11 = new Student("Samuel", "Rhodes", 3, "Biology", 4, true, true);
-        Student studentsInBio12 = new Student("Joan", "Acevedo", 1, "Biology", 1, false, true);
+        Student studentsInBio1 = new Student("Sam", "Robinson", "Biology", 2, 1, true, true);
+        Student studentsInBio2 = new Student("Hendrix", "Graves", "Biology", 1, 2, false, true);
+        Student studentsInBio3 = new Student("Conrad", "Mercado", "Biology", 4, 2, true, false);
+        Student studentsInBio4 = new Student("Jensen", "Hurst", "Biology", 4, 3, false, false);
+        Student studentsInBio5 = new Student("Jamie", "Mcclure", "Biology", 3, 4, true, true);
+        Student studentsInBio6 = new Student("Torin", "Stewart", "Biology", 2, 2, true, false);
+        Student studentsInBio7 = new Student("Teodor", "Lindsay", "Biology", 3, 4, false, false);
+        Student studentsInBio8 = new Student("Emilia", "Dotson", "Biology", 1, 1, false, true);
+        Student studentsInBio9 = new Student("Miller", "Bourne", "Biology", 2, 3, true, false);
+        Student studentsInBio10 = new Student("Che", "Coulson", "Biology", 3, 1, false, false);
+        Student studentsInBio11 = new Student("Samuel", "Rhodes", "Biology", 3, 4, true, true);
+        Student studentsInBio12 = new Student("Joan", "Acevedo", "Biology", 1, 1, false, true);
 
         lecturersInBio.add(lecturersInBio1);
         lecturersInBio.add(lecturersInBio2);
@@ -59,10 +59,10 @@ public class Test {
         for (Lecturer lecturer : lecturersInBio) {
             final int salaryInBiologyDepartment = 2000;
             int sumOfSalary = 0;
-            if (lecturer.department == "Biology" & lecturer.getExperience() <= 10) {
+            if (lecturer.getDepartment() == "Biology" & lecturer.getExperience() <= 10) {
                 sumOfSalary = minSalary + salaryInBiologyDepartment + 1000;
                 sumForLecturerInBioDep = sumForLecturerInBioDep + sumOfSalary;
-            } else if (lecturer.department == "Biology" & lecturer.getExperience() >= 10) {
+            } else if (lecturer.getDepartment() == "Biology" & lecturer.getExperience() >= 10) {
                 sumOfSalary = sumOfSalary = minSalary + salaryInBiologyDepartment + 1500;
                 sumForLecturerInBioDep = sumForLecturerInBioDep + sumOfSalary;
             }
@@ -84,7 +84,6 @@ public class Test {
         System.out.println("Budget for the next semester of the Department of Biology is :" + " " + budgetForBiologyDepartment);
 
 
-
         List<Lecturer> lecturersInChemistry = new ArrayList<>();
         List<Student> studentsInChemistry = new ArrayList<>();
 
@@ -96,18 +95,18 @@ public class Test {
         Lecturer lecturersInChemistry6 = new Lecturer("Carlie", "Contreras", "Lecturer", "Chemistry", 27);
         Lecturer lecturersInChemistry7 = new Lecturer("Elaina", "Kendall", "Lecturer", "Chemistry", 19);
 
-        Student studentsInChemistry1 = new Student("Hakeem", "Samuels", 2, "Chemistry", 3, false, false);
-        Student studentsInChemistry2 = new Student("Ross", "Heath", 2, "Chemistry", 1, true, false);
-        Student studentsInChemistry3 = new Student("Niall", "Gomez", 3, "Chemistry", 4, false, true);
-        Student studentsInChemistry4 = new Student("Bethaney", "Wills", 1, "Chemistry", 2, true, true);
-        Student studentsInChemistry5 = new Student("Omari", "Morales", 4, "Chemistry", 1, false, true);
-        Student studentsInChemistry6 = new Student("Summer", "Medrano", 4, "Chemistry", 3, false, false);
-        Student studentsInChemistry7 = new Student("Sarah-Jayne", "Oakley", 2, "Chemistry", 1, true, false);
-        Student studentsInChemistry8 = new Student("Harry", "Klein", 3, "Chemistry", 2, false, false);
-        Student studentsInChemistry9 = new Student("Umair", "Finley", 4, "Chemistry", 4, false, false);
-        Student studentsInChemistry10 = new Student("Roshni", "Morin", 3, "Chemistry", 4, false, true);
-        Student studentsInChemistry11 = new Student("Myla", "Duggan", 3, "Chemistry", 2, false, true);
-        Student studentsInChemistry12 = new Student("Kerry", "Bostock", 1, "Chemistry", 3, false, true);
+        Student studentsInChemistry1 = new Student("Hakeem", "Samuels", "Chemistry", 2, 3, false, false);
+        Student studentsInChemistry2 = new Student("Ross", "Heath", "Chemistry", 2, 1, true, false);
+        Student studentsInChemistry3 = new Student("Niall", "Gomez", "Chemistry", 3, 4, false, true);
+        Student studentsInChemistry4 = new Student("Bethaney", "Wills", "Chemistry", 1, 2, true, true);
+        Student studentsInChemistry5 = new Student("Omari", "Morales", "Chemistry", 4, 1, false, true);
+        Student studentsInChemistry6 = new Student("Summer", "Medrano", "Chemistry", 4, 3, false, false);
+        Student studentsInChemistry7 = new Student("Sarah-Jayne", "Oakley", "Chemistry", 2, 1, true, false);
+        Student studentsInChemistry8 = new Student("Harry", "Klein", "Chemistry", 3, 2, false, false);
+        Student studentsInChemistry9 = new Student("Umair", "Finley", "Chemistry", 4, 4, false, false);
+        Student studentsInChemistry10 = new Student("Roshni", "Morin", "Chemistry", 3, 4, false, true);
+        Student studentsInChemistry11 = new Student("Myla", "Duggan", "Chemistry", 3, 2, false, true);
+        Student studentsInChemistry12 = new Student("Kerry", "Bostock", "Chemistry", 1, 3, false, true);
 
         lecturersInChemistry.add(lecturersInChemistry1);
         lecturersInChemistry.add(lecturersInChemistry2);
@@ -136,10 +135,10 @@ public class Test {
         for (Lecturer lecturer : lecturersInChemistry) {
             final int salaryInChemistryDepartment = 1500;
             int sumOfSalary = 0;
-            if (lecturer.department == "Chemistry" & lecturer.getExperience() <= 10) {
+            if (lecturer.getDepartment() == "Chemistry" & lecturer.getExperience() <= 10) {
                 sumOfSalary = minSalary + salaryInChemistryDepartment + 1000;
                 sumForLecturerInChemDep = sumForLecturerInChemDep + sumOfSalary;
-            } else if (lecturer.department == "Chemistry" & lecturer.getExperience() >= 10) {
+            } else if (lecturer.getDepartment() == "Chemistry" & lecturer.getExperience() >= 10) {
                 sumOfSalary = minSalary + salaryInChemistryDepartment + 1500;
                 sumForLecturerInChemDep = sumForLecturerInChemDep + sumOfSalary;
             }
@@ -161,8 +160,6 @@ public class Test {
         System.out.println("Budget for the next semester of the Department of Chemistry is :" + " " + budgetForChemistryDepartment);
 
 
-
-
         List<Lecturer> lecturersInBiostatistics = new ArrayList<>();
         List<Student> studentsInBiostatistics = new ArrayList<>();
 
@@ -174,18 +171,18 @@ public class Test {
         Lecturer lecturersInBiostatistics6 = new Lecturer("Tamia", "Prince", "Lecturer", "Biostatistics", 2);
         Lecturer lecturersInBiostatistics7 = new Lecturer("Archibald", "Chambers", "Lecturer", "Biostatistics", 9);
 
-        Student studentsInBiostatistics1 = new Student("Hasan", "Bevan", 1, "Biostatistics", 1, true, true);
-        Student studentsInBiostatistics2 = new Student("Clara", "Lake", 3, "Biostatistics", 2, true, true);
-        Student studentsInBiostatistics3 = new Student("Phoenix", "Fritz", 2, "Biostatistics", 3, false, false);
-        Student studentsInBiostatistics4 = new Student("Harvir", "Dougherty", 4, "Biostatistics", 1, false, true);
-        Student studentsInBiostatistics5 = new Student("Macauly", "Gilbert", 2, "Biostatistics", 4, false, false);
-        Student studentsInBiostatistics6 = new Student("Niko", "Branch", 3, "Biostatistics", 4, true, false);
-        Student studentsInBiostatistics7 = new Student("Yuvraj", "Clemons", 4, "Biostatistics", 3, false, false);
-        Student studentsInBiostatistics8 = new Student("Tiarna", "Bray", 2, "Biostatistics", 1, true, false);
-        Student studentsInBiostatistics9 = new Student("Star", "Stevenson", 1, "Biostatistics", 3, false, true);
-        Student studentsInBiostatistics10 = new Student("Alistair", "Maynard", 1, "Biostatistics", 2, true, true);
-        Student studentsInBiostatistics11 = new Student("Precious", "Wolf", 4, "Biostatistics", 1, true, true);
-        Student studentsInBiostatistics12 = new Student("Malikah", "Wilder", 2, "Biostatistics", 4, false, false);
+        Student studentsInBiostatistics1 = new Student("Hasan", "Bevan", "Biostatistics", 1, 1, true, true);
+        Student studentsInBiostatistics2 = new Student("Clara", "Lake", "Biostatistics", 3, 2, true, true);
+        Student studentsInBiostatistics3 = new Student("Phoenix", "Fritz", "Biostatistics", 2, 3, false, false);
+        Student studentsInBiostatistics4 = new Student("Harvir", "Dougherty", "Biostatistics", 4, 1, false, true);
+        Student studentsInBiostatistics5 = new Student("Macauly", "Gilbert", "Biostatistics", 2, 4, false, false);
+        Student studentsInBiostatistics6 = new Student("Niko", "Branch", "Biostatistics", 3, 4, true, false);
+        Student studentsInBiostatistics7 = new Student("Yuvraj", "Clemons", "Biostatistics", 4, 3, false, false);
+        Student studentsInBiostatistics8 = new Student("Tiarna", "Bray", "Biostatistics", 2, 1, true, false);
+        Student studentsInBiostatistics9 = new Student("Star", "Stevenson", "Biostatistics", 1, 3, false, true);
+        Student studentsInBiostatistics10 = new Student("Alistair", "Maynard", "Biostatistics", 1, 2, true, true);
+        Student studentsInBiostatistics11 = new Student("Precious", "Wolf", "Biostatistics", 4, 1, true, true);
+        Student studentsInBiostatistics12 = new Student("Malikah", "Wilder", "Biostatistics", 2, 4, false, false);
 
         lecturersInBiostatistics.add(lecturersInBiostatistics1);
         lecturersInBiostatistics.add(lecturersInBiostatistics2);
@@ -214,10 +211,10 @@ public class Test {
         for (Lecturer lecturer : lecturersInBiostatistics) {
             final int salaryInBiostatisticsDepartment = 3500;
             int sumOfSalary = 0;
-            if (lecturer.department == "Biostatistics" & lecturer.getExperience() <= 10) {
+            if (lecturer.getDepartment() == "Biostatistics" & lecturer.getExperience() <= 10) {
                 sumOfSalary = minSalary + salaryInBiostatisticsDepartment + 1000;
                 sumForLecturerInBiostatDep = sumForLecturerInBiostatDep + sumOfSalary;
-            } else if (lecturer.department == "Biostatistics" & lecturer.getExperience() >= 10) {
+            } else if (lecturer.getDepartment() == "Biostatistics" & lecturer.getExperience() >= 10) {
                 sumOfSalary = minSalary + salaryInBiostatisticsDepartment + 1500;
                 sumForLecturerInBiostatDep = sumForLecturerInBiostatDep + sumOfSalary;
             }
@@ -239,9 +236,6 @@ public class Test {
         System.out.println("Budget for the next semester of the Biostatistics Department is :" + " " + budgetForBiostatisticsDepartment);
 
 
-
-
-
         List<Lecturer> lecturersInCardiology = new ArrayList<>();
         List<Student> studentsInCardiology = new ArrayList<>();
 
@@ -253,18 +247,18 @@ public class Test {
         Lecturer lecturersInCardiology6 = new Lecturer("Pauline", "Fowler", "Lecturer", "Cardiology", 12);
         Lecturer lecturersInCardiology7 = new Lecturer("Ollie", "Aguilar", "Lecturer", "Cardiology", 5);
 
-        Student studentsInCardiology1 = new Student("Alysha", "Mcguire", 3, "Cardiology", 2, true, true);
-        Student studentsInCardiology2 = new Student("Bodhi", "Mcmahon", 4, "Cardiology", 3, true, true);
-        Student studentsInCardiology3 = new Student("Darcy", "Lovell", 1, "Cardiology", 1, true, true);
-        Student studentsInCardiology4 = new Student("Eiliyah", "Lott", 2, "Cardiology", 3, true, true);
-        Student studentsInCardiology5 = new Student("Abubakr", "Conrad", 3, "Cardiology", 4, true, true);
-        Student studentsInCardiology6 = new Student("Safiyyah", "Cole", 3, "Cardiology", 2, true, true);
-        Student studentsInCardiology7 = new Student("Kirsty", "Mack", 1, "Cardiology", 4, true, true);
-        Student studentsInCardiology8 = new Student("Konrad", "Doyle", 4, "Cardiology", 1, true, true);
-        Student studentsInCardiology9 = new Student("Dolcie", "Acevedo", 2, "Cardiology", 3, true, true);
-        Student studentsInCardiology10 = new Student("Artur", "Woodcock", 1, "Cardiology", 1, true, true);
-        Student studentsInCardiology11 = new Student("Forrest", "Valencia", 4, "Cardiology", 3, true, true);
-        Student studentsInCardiology12 = new Student("Brandy", "Chase", 4, "Cardiology", 4, true, true);
+        Student studentsInCardiology1 = new Student("Alysha", "Mcguire", "Cardiology",3,  2, true, true);
+        Student studentsInCardiology2 = new Student("Bodhi", "Mcmahon","Cardiology", 4,  3, true, true);
+        Student studentsInCardiology3 = new Student("Darcy", "Lovell", "Cardiology",1,  1, true, true);
+        Student studentsInCardiology4 = new Student("Eiliyah", "Lott", "Cardiology",2,  3, true, true);
+        Student studentsInCardiology5 = new Student("Abubakr", "Conrad", "Cardiology",3,  4, true, true);
+        Student studentsInCardiology6 = new Student("Safiyyah", "Cole", "Cardiology",3,  2, true, true);
+        Student studentsInCardiology7 = new Student("Kirsty", "Mack", "Cardiology",1,  4, true, true);
+        Student studentsInCardiology8 = new Student("Konrad", "Doyle", "Cardiology",4,  1, true, true);
+        Student studentsInCardiology9 = new Student("Dolcie", "Acevedo", "Cardiology",2,  3, true, true);
+        Student studentsInCardiology10 = new Student("Artur", "Woodcock", "Cardiology",1,  1, true, true);
+        Student studentsInCardiology11 = new Student("Forrest", "Valencia", "Cardiology",4,  3, true, true);
+        Student studentsInCardiology12 = new Student("Brandy", "Chase", "Cardiology",4,  4, true, true);
 
         lecturersInCardiology.add(lecturersInCardiology1);
         lecturersInCardiology.add(lecturersInCardiology2);
@@ -293,10 +287,10 @@ public class Test {
         for (Lecturer lecturer : lecturersInCardiology) {
             final int salaryInCardiologyDepartment = 5500;
             int sumOfSalary = 0;
-            if (lecturer.department == "Cardiology" & lecturer.getExperience() <= 10) {
+            if (lecturer.getDepartment() == "Cardiology" & lecturer.getExperience() <= 10) {
                 sumOfSalary = minSalary + salaryInCardiologyDepartment + 1000;
                 sumForLecturerInCardiologyDep = sumForLecturerInCardiologyDep + sumOfSalary;
-            } else if (lecturer.department == "Cardiology" & lecturer.getExperience() >= 10) {
+            } else if (lecturer.getDepartment() == "Cardiology" & lecturer.getExperience() >= 10) {
                 sumOfSalary = minSalary + salaryInCardiologyDepartment + 1500;
                 sumForLecturerInCardiologyDep = sumForLecturerInCardiologyDep + sumOfSalary;
             }
@@ -316,11 +310,6 @@ public class Test {
 
         budgetForCardiologyDepartment = sumForLecturerInCardiologyDep + sumForStudentInCardiologyDep;
         System.out.println("Budget for the next semester of the Cardiology Department is :" + " " + budgetForCardiologyDepartment);
-
-
-
-
-
 
 
     }

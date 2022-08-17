@@ -6,11 +6,9 @@ public class Student extends Person {
     private int group;
     private boolean budget;
 
-    public Student(String name, String lastName, int course, String department, int group, boolean academicPerformance, boolean budget) {
-        this.name = name;
-        this.lastName = lastName;
+    public Student(String name, String lastName,String department, int course, int group, boolean academicPerformance, boolean budget) {
+        super(name, lastName, department);
         this.course = course;
-        this.department = department;
         this.group = group;
         this.academicPerformance = academicPerformance;
         this.budget = budget;
@@ -18,28 +16,12 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return "Student: " + name + " " + lastName + '\n' +
+        return "Student: " + getName() + " " + getLastName() + '\n' +
                 "Course: " + course + '\n' +
-                "Department: " + department + '\n' +
+                "Department: " + getDepartment() + '\n' +
                 "Group: " + group + '\n' +
                 "Academic performance: " + academicPerformance + '\n' +
                 "Budget: " + budget + '\n';
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public int getCourse() {
@@ -48,14 +30,6 @@ public class Student extends Person {
 
     public void setCourse(int course) {
         this.course = course;
-    }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
     }
 
     public boolean getAcademicPerformance() {

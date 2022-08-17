@@ -3,37 +3,19 @@ public class Lecturer extends Person {
     private int experience;
 
 
-    Lecturer(String name, String lastName, String position, String department, int experience) {
-        this.name = name;
-        this.lastName = lastName;
+    Lecturer(String name, String lastName, String department, String position, int experience) {
+        super(name, lastName, department);
         this.position = position;
-        this.department = department;
         this.experience = experience;
     }
 
 
     @Override
     public String toString() {
-        return "Lecturer: " + name + " " + lastName + '\n' +
+        return "Lecturer: " + getName() + " " + getLastName() + '\n' +
                 "Position: " + position + '\n' +
-                "Department: " + department + '\n' +
+                "Department: " + getDepartment() + '\n' +
                 "Experience: " + experience + " years" + '\n';
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public String getPosition() {
@@ -42,14 +24,6 @@ public class Lecturer extends Person {
 
     public void setPosition(String position) {
         this.position = position;
-    }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
     }
 
     public int getExperience() {
