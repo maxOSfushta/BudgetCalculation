@@ -14,21 +14,19 @@ public class Test {
         String path = "./students.csv";
         FileInputStream studentsInputStream = new FileInputStream(path);
         Scanner scanner = new Scanner(studentsInputStream);
-        Random random = new Random();
+
 
         scanner.nextLine();
         while (scanner.hasNextLine()) {
 
-            int r = random.nextInt(5 - 1) + 1;
+            String[] arrayOfStudents = scanner.nextLine().split(",");
 
-            String[] array = scanner.nextLine().split(",");
+            boolean academicPerformance = Boolean.parseBoolean(arrayOfStudents[5]);
+            boolean budget = Boolean.parseBoolean(arrayOfStudents[6]);
+            int course = Integer.parseInt(arrayOfStudents[2]);
+            int group = Integer.parseInt(arrayOfStudents[4]);
 
-            boolean b1 = Boolean.parseBoolean(array[5]);
-            boolean b2 = Boolean.parseBoolean(array[6]);
-
-            int b3 = Integer.parseInt(array[4]);
-
-            Student student = new Student(array[1], array[2], r, array[3], b3, b1, b2);
+            Student student = new Student(arrayOfStudents[0], arrayOfStudents[1], course, arrayOfStudents[3], group, academicPerformance, budget);
 
             department1.addStudent(student);
             department2.addStudent(student);
@@ -36,14 +34,36 @@ public class Test {
             department4.addStudent(student);
 
         }
+        String path1 = "./lecturers.csv";
+        FileInputStream lecturersInputStream = new FileInputStream(path1);
+        Scanner scanner1 = new Scanner(lecturersInputStream);
 
-        System.out.println("Dep1 " + department1.calculateBudgetForStudents());
-        System.out.println("Dep2 " + department2.calculateBudgetForStudents());
-        System.out.println("Dep3 " + department3.calculateBudgetForStudents());
-        System.out.println("Dep4 " + department4.calculateBudgetForStudents());
+        scanner1.nextLine();
+        while (scanner1.hasNextLine()) {
+
+            String[] arrayOfLecturers = scanner1.nextLine().split(",");
+
+            int experience = Integer.parseInt(arrayOfLecturers[4]);
+
+            Lecturer lecturer = new Lecturer(arrayOfLecturers[0], arrayOfLecturers[1], arrayOfLecturers[2], arrayOfLecturers[3], experience);
+
+            department1.addLecturer(lecturer);
+            department2.addLecturer(lecturer);
+            department3.addLecturer(lecturer);
+            department4.addLecturer(lecturer);
+
+        }
+
+        int sumForDep1 = department1.calculateBudgetForLecturers() + department1.calculateBudgetForStudents();
+        int sumForDep2 = department2.calculateBudgetForLecturers() + department2.calculateBudgetForStudents();
+        int sumForDep3 = department3.calculateBudgetForLecturers() + department3.calculateBudgetForStudents();
+        int sumForDep4 = department4.calculateBudgetForLecturers() + department4.calculateBudgetForStudents();
+
+        System.out.println("The budget for the Department of Biology is: " + sumForDep1 + " rubles");
+        System.out.println("The budget for the Department of Chemistry is: " + sumForDep2 + " rubles");
+        System.out.println("The budget for the Department of Biostatistics is: " + sumForDep3 + " rubles");
+        System.out.println("The budget for the Department of Cardiology is: " + sumForDep4 + " rubles");
     }
-// git add .
-// git commit -m "blabla"
-// git push
+
 }
 

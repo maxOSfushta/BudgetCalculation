@@ -56,4 +56,10 @@ public class Department {
                 students.add(student);
         }
     }
+
+    public void addLecturer(Lecturer lecturer) {
+        if(Objects.equals(lecturer.getDepartment(), this.department)) {
+            lecturers.add(lecturer);
+        }
+    }
 }
