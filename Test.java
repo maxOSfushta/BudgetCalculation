@@ -34,6 +34,8 @@ public class Test {
             department4.addStudent(student);
 
         }
+        studentsInputStream.close();
+
         String path1 = "./lecturers.csv";
         FileInputStream lecturersInputStream = new FileInputStream(path1);
         Scanner scanner1 = new Scanner(lecturersInputStream);
@@ -53,6 +55,9 @@ public class Test {
             department4.addLecturer(lecturer);
 
         }
+
+        lecturersInputStream.close();
+
 
         int sumForDep1 = department1.calculateBudgetForLecturers() + department1.calculateBudgetForStudents();
         int sumForDep2 = department2.calculateBudgetForLecturers() + department2.calculateBudgetForStudents();
