@@ -6,18 +6,18 @@ public class Department {
 
     private List<Lecturer> lecturers = new ArrayList<>();
     private List<Student> students = new ArrayList<>();
-    private final int salaryInDepartment;
+    private final int SALARY_IN_DEPARTMENT;
 
 
-    final static int minSalary = 6000;
-    final static int minScholarship = 1500;
-    final static int performanceAllowance = 500;
+    final static int MIN_SALARY = 6000;
+    final static int MIN_SCHOLARSHIP = 1500;
+    final static int PERFORMANCE_ALLOWANCE = 500;
     private String department;
 
 
-    public Department(int salaryInDepartment, String department) {
+    public Department(int SALARY_IN_DEPARTMENT, String department) {
         this.department = department;
-        this.salaryInDepartment = salaryInDepartment;
+        this.SALARY_IN_DEPARTMENT = SALARY_IN_DEPARTMENT;
     }
 
 
@@ -26,10 +26,10 @@ public class Department {
         int sumOfSalary = 0;
         for (Lecturer lecturer : lecturers) {
             if (lecturer.getExperience() <= 10) {
-                sumOfSalary = minSalary + salaryInDepartment + 1000;
+                sumOfSalary = MIN_SALARY + SALARY_IN_DEPARTMENT + 1000;
                 sumForLecturerInDep += sumOfSalary;
             } else if (lecturer.getExperience() >= 10) {
-                sumOfSalary = minSalary + salaryInDepartment + 1500;
+                sumOfSalary = MIN_SALARY + SALARY_IN_DEPARTMENT + 1500;
                 sumForLecturerInDep += sumOfSalary;
             }
         }
@@ -41,10 +41,10 @@ public class Department {
         int sumForStudentInDep = 0;
         for (Student student : students) {
             if (student.getBudget() & student.getAcademicPerformance()) {
-                sumOfScholarship = minScholarship + performanceAllowance;
+                sumOfScholarship = MIN_SCHOLARSHIP + PERFORMANCE_ALLOWANCE;
                 sumForStudentInDep += sumOfScholarship;
             } else if (student.getBudget() & !student.getAcademicPerformance()) {
-                sumOfScholarship = minScholarship;
+                sumOfScholarship = MIN_SCHOLARSHIP;
                 sumForStudentInDep += sumOfScholarship;
             }
         }
